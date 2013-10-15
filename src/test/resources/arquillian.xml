@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+  <container qualifier="tomee-remote" default="true">
+    <configuration>
+      <property name="conf">src/main/tomee/conf</property>
+
+      <property name="debug">true</property>
+
+      <property name="classifier">plus</property>
+      <property name="httpPort">-1</property>
+      <property name="stopPort">-1</property>
+      <property name="ajpPort">-1</property>
+      <property name="simpleLog">true</property>
+      <property name="dir">target/apache-tomee</property>
+      <property name="appWorkingDir">target/arquillian-test-working-dir-2</property>
+    </configuration>
+  </container>
+
+</arquillian>

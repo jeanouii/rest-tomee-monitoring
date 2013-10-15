@@ -7,28 +7,28 @@ import org.apache.tomee.loader.TomcatHelper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.lang.management.ManagementFactory;
 
-/**
-* Created with IntelliJ IDEA.
-* User: jlmonteiro
-* Date: 14/10/13
-* Time: 23:20
-* To change this template use File | Settings | File Templates.
-*/
 @XmlRootElement
 public class ServerInfo {
-    public String name = TomcatHelper.getServer().findServices()[0].getName();
-    public String status = TomcatHelper.getServer().getState().name();
-    public String tomeeHome = System.getProperty("openejb.home");
-    public String tomeeBase = System.getProperty("openejb.base");
-    public String version = org.apache.catalina.util.ServerInfo.getServerInfo();
-    public String ports = "";
+    private String name;
+    private String status;
+    private String tomeeHome;
+    private String tomeeBase;
+    private String version;
+    private String ports = "";
+    private long uptime;
 
     public ServerInfo() {
-        Connector[] connectors = TomcatHelper.getServer().findServices()[0].findConnectors();
-        for (int i = 0; i < connectors.length; i++) {
-            ports += connectors[i].getProtocol() + " -> " + connectors[i].getPort();
-            if (i < connectors.length - 1) ports += ", ";
-        }
+    }
+
+    public ServerInfo(final String name, final String status, final String tomeeHome, final String tomeeBase,
+                      final String version, final long uptime, final String ports) {
+        this.name = name;
+        this.status = status;
+        this.tomeeHome = tomeeHome;
+        this.tomeeBase = tomeeBase;
+        this.version = version;
+        this.uptime = uptime;
+        this.ports = ports;
     }
 
     public String getName() {
@@ -52,7 +52,6 @@ public class ServerInfo {
     }
 
     public String getUpTime() {
-        long uptime = System.currentTimeMillis() - ManagementFactory.getRuntimeMXBean().getStartTime();
         return DurationFormatUtils.formatDurationHMS(uptime);
     }
 
