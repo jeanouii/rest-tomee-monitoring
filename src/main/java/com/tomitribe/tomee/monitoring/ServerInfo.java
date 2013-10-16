@@ -1,11 +1,8 @@
-package foo;
+package com.tomitribe.tomee.monitoring;
 
-import org.apache.catalina.connector.Connector;
 import org.apache.commons.lang3.time.DurationFormatUtils;
-import org.apache.tomee.loader.TomcatHelper;
 
 import javax.xml.bind.annotation.XmlRootElement;
-import java.lang.management.ManagementFactory;
 
 @XmlRootElement
 public class ServerInfo {
@@ -57,5 +54,33 @@ public class ServerInfo {
 
     public String getPorts() {
         return ports;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setTomeeHome(String tomeeHome) {
+        this.tomeeHome = tomeeHome;
+    }
+
+    public void setTomeeBase(String tomeeBase) {
+        this.tomeeBase = tomeeBase;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public void setPorts(String ports) {
+        this.ports = ports;
+    }
+
+    public void setUptime(long uptime) {
+        this.uptime = uptime;
     }
 }

@@ -51,8 +51,9 @@
       <groupId>org.apache.openejb</groupId>
       <artifactId>openejb-core</artifactId>
       <version>${openejb.version}</version>
-      <scope>test</scope>
+      <scope>provided</scope> <!-- should have been test, but I'm reusing temporary the LocalMBeanServer -->
     </dependency>
+
     <dependency>
       <groupId>org.apache.openejb</groupId>
       <artifactId>openejb-cxf-rs</artifactId>

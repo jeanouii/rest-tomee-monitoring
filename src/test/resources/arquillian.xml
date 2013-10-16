@@ -6,7 +6,7 @@
     <configuration>
       <property name="conf">src/main/tomee/conf</property>
 
-      <property name="debug">true</property>
+      <property name="debug">false</property>
 
       <property name="classifier">plus</property>
       <property name="httpPort">-1</property>

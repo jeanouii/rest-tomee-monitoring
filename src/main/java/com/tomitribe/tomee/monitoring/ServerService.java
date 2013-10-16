@@ -1,4 +1,4 @@
-package foo;
+package com.tomitribe.tomee.monitoring;
 
 import org.apache.catalina.connector.Connector;
 import org.apache.tomee.loader.TomcatHelper;
@@ -40,6 +40,18 @@ public class ServerService {
     @GET
     @Path("/restart")
     public String restart() {
+        return "Not yet implemented";
+    }
+
+    @GET
+    @Path("/start")
+    public String start() {
+        return "Not yet implemented";
+    }
+
+    @GET
+    @Path("/restart")
+    public String stop() {
         return "Not yet implemented";
     }
 

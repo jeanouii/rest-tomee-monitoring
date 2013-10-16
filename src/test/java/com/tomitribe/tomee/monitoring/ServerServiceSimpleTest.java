@@ -1,5 +1,6 @@
-package foo;
+package com.tomitribe.tomee.monitoring;
 
+import com.tomitribe.tomee.monitoring.ServerService;
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.apache.openejb.jee.WebApp;
 import org.apache.openejb.junit.ApplicationComposer;
