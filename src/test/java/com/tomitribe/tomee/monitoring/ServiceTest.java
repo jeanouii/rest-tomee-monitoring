@@ -1,6 +1,6 @@
 package com.tomitribe.tomee.monitoring;
 
-import com.tomitribe.tomee.monitoring.ServerInfo;
+import com.tomitribe.tomee.monitoring.server.Server;
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
@@ -37,8 +37,8 @@ public class ServiceTest {
     @Test
     @RunAsClient
     public void info() {
-        ServerInfo info = WebClient.create(BASE_URL.toExternalForm()).path("/server/info")
-                .get(ServerInfo.class);
+        Server info = WebClient.create(BASE_URL.toExternalForm()).path("/server/info")
+                .get(Server.class);
         Assert.assertNotNull(info);
     }
 

@@ -1,5 +1,6 @@
-package com.tomitribe.tomee.monitoring;
+package com.tomitribe.tomee.monitoring.server;
 
+import com.tomitribe.tomee.monitoring.ArchiveInfo;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomee.loader.TomcatHelper;
 
@@ -14,11 +15,11 @@ import java.lang.management.ManagementFactory;
 @Singleton
 @Lock(LockType.READ)
 @Path("/server")
-public class ServerService {
+public class ServerResource {
 
     @GET
     @Path("/info")
-    public ServerInfo getInfo() {
+    public Server getInfo() {
         String name = TomcatHelper.getServer().findServices()[0].getName();
         String status = TomcatHelper.getServer().getState().name();
         String tomeeHome = System.getProperty("openejb.home");
@@ -33,7 +34,7 @@ public class ServerService {
             ports += connectors[i].getProtocol() + " -> " + connectors[i].getPort();
             if (i < connectors.length - 1) ports += ", ";
         }
-        return new ServerInfo(name, status, tomeeHome, tomeeBase, version, uptime, ports);
+        return new Server(name, status, tomeeHome, tomeeBase, version, uptime, ports);
     }
 
 

@@ -1,6 +1,6 @@
 package com.tomitribe.tomee.monitoring;
 
-import com.tomitribe.tomee.monitoring.ServerService;
+import com.tomitribe.tomee.monitoring.server.ServerResource;
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.apache.openejb.jee.WebApp;
 import org.apache.openejb.junit.ApplicationComposer;
@@ -17,7 +17,7 @@ public class ServerServiceSimpleTest {
 
 
     @Module
-    @Classes(ServerService.class)
+    @Classes(ServerResource.class)
     public WebApp archive() {
         return new WebApp()
                 .contextRoot("foo");

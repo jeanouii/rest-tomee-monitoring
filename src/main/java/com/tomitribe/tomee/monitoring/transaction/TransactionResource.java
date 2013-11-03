@@ -1,4 +1,4 @@
-package com.tomitribe.tomee.monitoring;
+package com.tomitribe.tomee.monitoring.transaction;
 
 import javax.ejb.Lock;
 import javax.ejb.LockType;
@@ -12,7 +12,7 @@ import java.io.IOException;
 @Singleton
 @Lock(LockType.READ)
 @Path("/transaction")
-public class TransactionService {
+public class TransactionResource {
 
     private static final String TRANSACTION_NAME = "openejb.management:j2eeType=TransactionManager";
 

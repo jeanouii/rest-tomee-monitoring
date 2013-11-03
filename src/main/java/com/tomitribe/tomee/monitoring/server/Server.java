@@ -1,11 +1,11 @@
-package com.tomitribe.tomee.monitoring;
+package com.tomitribe.tomee.monitoring.server;
 
 import org.apache.commons.lang3.time.DurationFormatUtils;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class ServerInfo {
+public class Server {
     private String name;
     private String status;
     private String tomeeHome;
@@ -14,11 +14,11 @@ public class ServerInfo {
     private String ports = "";
     private long uptime;
 
-    public ServerInfo() {
+    public Server() {
     }
 
-    public ServerInfo(final String name, final String status, final String tomeeHome, final String tomeeBase,
-                      final String version, final long uptime, final String ports) {
+    public Server(final String name, final String status, final String tomeeHome, final String tomeeBase,
+                  final String version, final long uptime, final String ports) {
         this.name = name;
         this.status = status;
         this.tomeeHome = tomeeHome;
