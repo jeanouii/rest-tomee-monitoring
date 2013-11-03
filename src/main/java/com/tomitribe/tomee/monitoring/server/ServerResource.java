@@ -1,6 +1,5 @@
 package com.tomitribe.tomee.monitoring.server;
 
-import com.tomitribe.tomee.monitoring.ArchiveInfo;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomee.loader.TomcatHelper;
 
@@ -8,7 +7,6 @@ import javax.ejb.Lock;
 import javax.ejb.LockType;
 import javax.ejb.Singleton;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import java.lang.management.ManagementFactory;
 
@@ -51,16 +49,9 @@ public class ServerResource {
     }
 
     @GET
-    @Path("/restart")
+    @Path("/stop")
     public String stop() {
         return "Not yet implemented";
-    }
-
-    @POST
-    @Path("/deploy")
-    public String deploy(final ArchiveInfo archive) {
-        return "Not yet implemented";
-
     }
 
 }

@@ -1,4 +1,4 @@
-package com.tomitribe.tomee.monitoring;
+package com.tomitribe.tomee.monitoring.util;
 
 import org.apache.openejb.monitoring.LocalMBeanServer;
 
