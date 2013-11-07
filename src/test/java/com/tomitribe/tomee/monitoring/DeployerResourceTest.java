@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(ApplicationComposer.class)
 @EnableServices("jax-rs")
-public class ServerServiceSimpleTest {
+public class DeployerResourceTest {
     private static final String BASE_URL = "http://localhost:4204/foo";
 
 

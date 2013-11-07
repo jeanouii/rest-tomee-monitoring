@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
 import java.net.URL;
 
 @RunWith(Arquillian.class)
-public class ServiceTest {
+public class ServerResourceTest {
     @ArquillianResource
     private URL BASE_URL;
 
